@@ -8,17 +8,34 @@
     />
     <title>Weather Pre-Work</title>
     <link rel="stylesheet" href="/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="container">
-      <h1>CITY</h1>
-      <img
-        src="https://png.pngtree.com/png-clipart/20220911/original/pngtree-cute-sunny-png-image_8544640.png"
-        alt="sun"
-        width="200"
-      />
-      <h2>TEMPERATURE</h2>
-      <p>DESCRIPTION</p>
+    <div id="container">
+      <form id="city-search">
+        <div class="search-bar">
+          <input
+            type="text"
+            placeholder="search new city"
+            autocomplete="off"
+            autofocus="on"
+            id="search-text-input"
+          />
+          <input type="submit" value="🔍" />
+        </div>
+      </form>
+
+      <br />
+      <img src="" alt="weather icon" id="weather-icon" />
+      <br />
+      <h1 id="city-name"></h1>
+      <div id="weather-info">
+        <h2>Currently:</h2>
+        <span id="current-temp"></span> °F
+        <br />
+        <span id="high"></span> / <span id="low"></span>
+      </div>
     </div>
+    <script src="/weather.js"></script>
   </body>
 </html>
