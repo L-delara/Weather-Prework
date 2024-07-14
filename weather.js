@@ -1,6 +1,21 @@
 function refreshWeather(response) {
-  let currentTemp = response.data.current.temperature_2m;
-  console.log(currentTemp);
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = `${Math.round(
+    response.data.current.temperature_2m
+  )}`;
+
+  let maxTemp = document.querySelector("#high");
+  maxTemp.innerHTML = `${Math.round(
+    response.data.daily.temperature_2m_max
+  )}`;
+
+  let minTemp = document.querySelector("#low");
+  minTemp.innerHTML = `${Math.round(
+    response.data.daily.temperature_2m_min
+  )}`;
+  // console.log(currentTemp);
+  // console.log(maxTemp);
+  // console.log(minTemp);
 }
 
 function loadCity(response) {
@@ -8,8 +23,11 @@ function loadCity(response) {
   let longitude = response.data.results[0].longitude;
 
   //make call to open-meteo api with latitude/longitude
-  let weatherApiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit`;
+  let weatherApiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&forecast_days=1`;
   console.log(weatherApiUrl);
+  let cityElement = document.querySelector("#city-name");
+
+  cityElement.innerHTML = response.data.results[0].name;
 
   axios.get(weatherApiUrl).then(refreshWeather);
 }
@@ -24,13 +42,14 @@ function searchCity(city) {
 
 function handleSearch(event) {
   event.preventDefault();
-  // let searchInput = document.querySelector("#search-text-input");
-  let cityElement = document.querySelector("#city-name");
-  cityElement.innerHTML = searchInput.value;
+  let searchInput = document.querySelector("#search-text-input");
+
   searchCity(searchInput.value);
 }
 
-let searchInput = document.querySelector("#search-text-input");
+// let searchInput = document.querySelector("#search-text-input");
 
 let searchElement = document.querySelector("#city-search");
 searchElement.addEventListener("submit", handleSearch);
+
+searchCity("Dublin");

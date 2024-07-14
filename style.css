@@ -4,9 +4,16 @@ body {
   height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-h1,
-p {
-  color: rgba(218, 252, 236, 0.9);
+
+h1 {
+  font-size: 42px;
+  color: rgba(66, 136, 103, 0.9);
+}
+
+h2,
+h4 {
+  display: inline-block;
+  color: rgba(66, 136, 103, 0.9);
 }
 
 #container {
@@ -19,4 +26,18 @@ p {
   border: 1px solid rgba(29, 43, 66, 0.75);
   border-radius: 5px;
   box-shadow: 0 6px 30px rgba(29, 43, 66, 0.2);
+}
+
+#high {
+  font-weight: 600;
+}
+#high,
+#low {
+  font-size: 18px;
+}
+#low {
+  font-weight: 300;
+}
+#current-temp {
+  font-size: 40px;
 }

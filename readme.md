@@ -1,2 +1,9 @@
-basic weather app, pulls info from open-meteo API
-app searches requested city, displays temperature and descriptive condition
+#Basic weather display app
+
+- Using a search bar to take a city name, it runs through Open-Meteo's Geocoding API to pull the latitude/longitude coordinates to run through their Weather Forecast API. (Weather API only takes coordinates, not city names)
+- Displays the city name, the current temperature in Farenheit, and the high and low temperatures for the day.
+
+- If time allows, convert API's Weather Code into readable weather description ('sunny', 'rainy', etc)
+- If time allows, find icons to display
+
+##To Run:
