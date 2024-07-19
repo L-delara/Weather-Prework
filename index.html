@@ -21,19 +21,19 @@
             autofocus="on"
             id="search-text-input"
           />
-          <input type="submit" value="🔍" />
+          <input type="submit" id="submit-button" value="submit" />
         </div>
       </form>
 
       <br />
       <h1 id="city-name"></h1>
       <div id="weather-info">
-        <h2>Currently:</h2>
-        <span id="current-temp"></span> °F
+        Currently:
+        <h2 id="current-temp"></h2>
+        <p>°F</p>
         <br />
-        <h4>Today:</h4>
-        <span id="high"></span>
-        /
+        Today: <span id="high"></span>
+        <p>/</p>
         <span id="low"></span>
         °F
       </div>

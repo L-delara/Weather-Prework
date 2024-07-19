@@ -7,3 +7,6 @@
 - If time allows, find icons to display
 
 ##To Run:
+
+- Clone project to machine, project runs with Live Server extension on VS Code enabled.
+  -Project also hosted on Netlify: https://lively-queijadas-df263e.netlify.app
