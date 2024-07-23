@@ -13,6 +13,6 @@ Project also hosted on Netlify: https://lively-queijadas-df263e.netlify.app
 ##To-Do:
 
 ~~Clean up CSS~~
-(For fun: toggle light/dark view?)
+~~(For fun: toggle light/dark view?)~~
 If time allows, convert API's Weather Code into readable weather description ('sunny', 'rainy', etc)
 Find icons to display?

@@ -1,3 +1,19 @@
+function changeTheme() {
+  let body = document.querySelector("body");
+
+  if (body.classList.contains("dark")) {
+    body.classList.remove("dark");
+    document.getElementsByClassName("dark-button")[0].innerHTML =
+      "Dark View";
+  } else {
+    body.classList.add("dark");
+    document.getElementsByClassName("dark-button")[0].innerHTML =
+      "Bright View";
+  }
+}
+let darkButton = document.querySelector(".dark-button");
+darkButton.addEventListener("click", changeTheme);
+
 function refreshWeather(response) {
   //pull and display data points - current temperature, today's high, and today's low
   let currentTemp = document.querySelector("#current-temp");

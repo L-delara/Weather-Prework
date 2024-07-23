@@ -1,4 +1,10 @@
+/* base elements */
 body {
+  background: linear-gradient(
+    to top,
+    rgb(251, 194, 235) 0%,
+    rgb(166, 193, 238) 100%
+  );
   background-color: rgb(245, 241, 254);
   color: rgba(29, 43, 66, 0.75);
   justify-content: center;
@@ -6,13 +12,11 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
 }
-
 h1 {
   font-size: 62px;
   font-weight: 500;
   margin: 0;
 }
-
 h2,
 h4 {
   display: inline-block;
@@ -21,36 +25,54 @@ h4 {
 p {
   display: inline-block;
 }
-#container {
-  background-color: rgba(255, 255, 255, 0.2);
-  max-width: 450px;
+a {
+  text-decoration: none;
+  color: rgba(134, 12, 85, 0.95);
+  font-weight: bolder;
+}
+button {
+  padding: 8px;
+  border: 1px solid rgba(116, 43, 155, 0.7);
+  border-radius: 4px;
+  background: transparent;
   display: block;
   margin: 0 auto;
-  padding: 15px;
+}
+footer {
+  font-size: small;
+}
+
+/* tagged base elements */
+
+#container {
+  background-color: rgba(255, 255, 255, 0.2);
+  max-width: 500px;
+  display: block;
+  margin: 15px auto;
+  padding: 15px 10px 5px;
   text-align: center;
   border: 1px solid rgb(141, 105, 230);
   border-radius: 5px;
   box-shadow: 0 6px 30px rgba(29, 43, 66, 0.2);
 }
-
 #search-text-input {
-  padding: 10px;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(116, 43, 155, 0.6);
   border-radius: 5px;
 }
 #submit-button {
-  padding: 10px;
+  padding: 8px;
   border: 1px solid rgba(116, 43, 155, 0.7);
   border-radius: 5px;
-  background-color: rgba(116, 43, 155, 0.7);
+  background-color: rgba(116, 43, 155, 0.5);
   color: rgba(255, 255, 255, 0.9);
 }
 #submit-button:hover {
   background-color: rgba(255, 255, 255, 0.5);
   color: rgba(116, 43, 155, 0.9);
-  transition: all 150ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
-
 #high {
   font-weight: bold;
 }
@@ -63,4 +85,50 @@ p {
 }
 #current-temp {
   font-size: 50px;
+}
+
+/* darkside variant */
+.dark {
+  background: rgb(2, 9, 41);
+  background: linear-gradient(
+    180deg,
+    rgba(1, 6, 27, 0.95) 0%,
+    rgba(36, 7, 36, 0.95) 60%,
+    rgba(92, 11, 74, 0.8) 100%
+  );
+}
+.dark #container {
+  background-color: rgb(36, 7, 36, 0.65);
+  opacity: 90%;
+  color: rgba(255, 242, 196, 0.75);
+}
+.dark #search-text-input {
+  background-color: rgba(248, 246, 240, 0.8);
+}
+.dark a {
+  color: rgba(196, 31, 130, 0.95);
+  font-weight: bolder;
+}
+/* in bright view, button looks like this... */
+.dark-button:hover {
+  background: rgba(26, 44, 84, 0.8);
+  color: rgba(237, 200, 105, 0.9);
+  transition: all 200ms ease-in-out;
+}
+/* in dark view, button looks like this... */
+.dark button {
+  color: rgba(237, 200, 105, 0.9);
+}
+.dark button:hover {
+  color: rgba(22, 5, 22, 0.95);
+  background: rgba(255, 242, 196, 0.75);
+  transition: all 200ms ease-in-out;
+}
+.dark #submit-button {
+  color: rgba(237, 200, 105, 0.9);
+}
+.dark #submit-button:hover {
+  color: rgba(22, 5, 22, 0.95);
+  background: rgba(255, 242, 196, 0.75);
+  transition: all 200ms ease-in-out;
 }
