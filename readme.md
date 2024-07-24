@@ -14,5 +14,5 @@ Project also hosted on Netlify: https://lively-queijadas-df263e.netlify.app
 
 ~~Clean up CSS~~
 ~~(For fun: toggle light/dark view?)~~
-If time allows, convert API's Weather Code into readable weather description ('sunny', 'rainy', etc)
-Find icons to display?
+~~Convert API's Weather Code into readable weather description ('sunny', 'rainy', etc)~~
+If time allows, find icons to display?

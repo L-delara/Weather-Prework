@@ -79,6 +79,7 @@ footer {
 #high,
 #low {
   font-size: 32px;
+  display: inline-block;
 }
 #low {
   font-weight: 400;

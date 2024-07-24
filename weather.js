@@ -30,9 +30,49 @@ function refreshWeather(response) {
   minTemp.innerHTML = `${Math.round(
     response.data.daily.temperature_2m_min
   )}`;
-  // console.log(currentTemp);
-  // console.log(maxTemp);
-  // console.log(minTemp);
+
+  // Pull the weird numerical weather code from the response
+  let findCode = response.data.current.weather_code;
+
+  // Label the weather codes into something readable: sunny, cloudy, rainy, etc
+  let weatherCodeLabels = {
+    0: "Clear Sky",
+    1: "Mainly Clear",
+    2: "Partly Cloudy",
+    3: "Overcast",
+    45: "Fog",
+    48: "Rime Fog",
+    51: "Light Drizzle",
+    53: "Moderate Drizzle",
+    55: "Heavy Drizzle",
+    56: "Light Freezing Drizzle",
+    57: "Light Freezing Drizzle",
+    61: "Light Rain",
+    63: "Moderate Rain",
+    65: "Heavy Rain",
+    66: "Light Freezing Rain",
+    67: "Heavy Freezing Rain",
+    71: "Light Snow",
+    73: "Moderate Snow",
+    75: "Heavy Snow",
+    77: "Snow Grains",
+    80: "Light Rain Showers",
+    81: "Moderate Rain Showers",
+    82: "Violent Rain Showers",
+    85: "Light Snow Showers",
+    86: "Heavy Snow Showers",
+    95: "Thunderstorms",
+    96: "Light Hail Thunderstorm",
+    96: "Heavy Hail Thunderstorm",
+  };
+
+  // combine code and description
+  let weatherDescription = weatherCodeLabels[findCode];
+
+  // Display the condition
+  let descriptionDisplay = document.querySelector("#current-description");
+  descriptionDisplay.innerHTML = weatherDescription;
+  console.log(weatherDescription);
 }
 
 function loadCity(response) {
@@ -41,8 +81,8 @@ function loadCity(response) {
   let longitude = response.data.results[0].longitude;
 
   //make call to open-meteo api with latitude/longitude
-  let weatherApiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&forecast_days=1`;
-  console.log(weatherApiUrl);
+  let weatherApiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&forecast_days=1`;
+  https: console.log(weatherApiUrl);
   // Display search result as a city name
   let cityElement = document.querySelector("#city-name");
   cityElement.innerHTML = response.data.results[0].name;
